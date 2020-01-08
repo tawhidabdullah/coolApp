@@ -32,7 +32,7 @@ async function loadResourcesAsync() {
   await Promise.all([
     Asset.loadAsync([
       require('./assets/images/robot-dev.png'),
-      require('./assets/images/robot-prod.png'),
+      require('./assets/images/robot-prod.png')
     ]),
     Font.loadAsync({
       // This is the font that we are using for our tab bar
@@ -40,7 +40,12 @@ async function loadResourcesAsync() {
       // We include SpaceMono because we use it in HomeScreen.js. Feel free to
       // remove this if you are not using it in your app
       'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf'),
-    }),
+      raleBlack: require('./assets/fonts/Raleway-Black.ttf'),
+      raleMedium: require('./assets/fonts/Raleway-Medium.ttf'),
+      raleBold: require('./assets/fonts/Raleway-Bold.ttf'),
+      raleSemiBold: require('./assets/fonts/Raleway-SemiBold.ttf'),
+      raleRegular: require('./assets/fonts/Raleway-Regular.ttf')
+    })
   ]);
 }
 
@@ -57,6 +62,6 @@ function handleFinishLoading(setLoadingComplete) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-  },
+    backgroundColor: '#fff'
+  }
 });
