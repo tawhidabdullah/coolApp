@@ -29,46 +29,10 @@ export default function HomeScreen() {
             style={styles.welcomeImage}
           />
         </View>
-
-        <View style={styles.getStartedContainer}>
-          <DevelopmentModeNotice />
-
-          <NormalText style={styles.getStartedText}>
-            Get started by opening
-          </NormalText>
-
-          <View
-            style={[styles.codeHighlightContainer, styles.homeScreenFilename]}
-          >
-            <NormalText>screens/HomeScreen.js</NormalText>
-          </View>
-
-          <Text style={styles.getStartedText}>
-            Change this text and your app will automatically reload.
-          </Text>
-        </View>
-
-        <View style={styles.helpContainer}>
-          <TouchableOpacity onPress={handleHelpPress} style={styles.helpLink}>
-            <Text style={styles.helpLinkText}>
-              Help, it didn’t automatically reload!
-            </Text>
-          </TouchableOpacity>
-        </View>
       </ScrollView>
 
       <View style={styles.tabBarInfoContainer}>
-        <Text style={styles.tabBarInfoText}>
-          This is a tab bar. You can edit it in:
-        </Text>
-
-        <View
-          style={[styles.codeHighlightContainer, styles.navigationFilename]}
-        >
-          <NormalText style={styles.codeHighlightText}>
-            navigation/MainTabNavigator.js
-          </NormalText>
-        </View>
+        <NormalText style={styles.codeHighlightText}>Woo App</NormalText>
       </View>
     </View>
   );
