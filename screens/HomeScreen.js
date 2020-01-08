@@ -10,7 +10,7 @@ import {
   View
 } from 'react-native';
 
-import { NormalText } from '../components/StyledText';
+import { NormalText, PrimaryHeading } from '../components/StyledText';
 
 export default function HomeScreen() {
   return (
@@ -32,6 +32,7 @@ export default function HomeScreen() {
       </ScrollView>
 
       <View style={styles.tabBarInfoContainer}>
+        <PrimaryHeading>Woo App</PrimaryHeading>
         <NormalText style={styles.codeHighlightText}>Woo App</NormalText>
       </View>
     </View>

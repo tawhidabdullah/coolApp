@@ -1,24 +1,34 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, StyleSheet } from 'react-native';
+import { setFontType } from '../utils/textManipulator';
 
 export function NormalText(props) {
-  const setFontType = type => {
-    switch (type) {
-      case 'black':
-        return 'raleBlack';
-      case 'bold':
-        return 'raleBold';
-      case 'semi-bold':
-        return 'raleSemiBold';
-      case 'medium':
-        return 'raleMedium';
-      default:
-        return 'raleRegular';
-    }
-  };
-
   const font = setFontType(props.type ? props.type : 'normal');
   const style = [{ fontFamily: font }, props.style || {}];
   const allProps = Object.assign({}, props, { style: style });
   return <Text {...allProps}>{props.children}</Text>;
 }
+
+export function PrimaryHeading(props) {
+  const font = setFontType('raleMedium');
+  const style = [
+    { fontFamily: font },
+    styles.primaryHeading,
+    props.style || {}
+  ];
+  const allProps = Object.assign({}, props, { style: style });
+  return <Text {...allProps}>{props.children}</Text>;
+}
+
+const styles = StyleSheet.create({
+  primaryHeading: {
+    fontSize: 17,
+    fontWeight: '700',
+    color: '#444'
+  },
+  paragraphText: {
+    fontSize: 17,
+    fontWeight: '700',
+    color: '#444'
+  }
+});
