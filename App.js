@@ -2,10 +2,13 @@ import { AppLoading } from 'expo';
 import { Asset } from 'expo-asset';
 import * as Font from 'expo-font';
 import React, { useState } from 'react';
+import { Provider } from 'react-redux';
+import { UtilityThemeProvider } from 'react-native-design-utility';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 import AppNavigator from './navigation/AppNavigator';
+import configureStore from './state/store';
 
 export default function App(props) {
   const [isLoadingComplete, setLoadingComplete] = useState(false);
@@ -22,7 +25,11 @@ export default function App(props) {
     return (
       <View style={styles.container}>
         {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-        <AppNavigator />
+        <Provider store={configureStore({})}>
+          <UtilityThemeProvider>
+            <AppNavigator />
+          </UtilityThemeProvider>
+        </Provider>
       </View>
     );
   }

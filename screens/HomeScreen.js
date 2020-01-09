@@ -32,7 +32,9 @@ export default function HomeScreen() {
       </ScrollView>
 
       <View style={styles.tabBarInfoContainer}>
-        <PrimaryHeading>Woo App</PrimaryHeading>
+        <PrimaryHeading>
+          The Great Tawhid Abdullah, The Legendary{' '}
+        </PrimaryHeading>
         <NormalText style={styles.codeHighlightText}>Woo App</NormalText>
       </View>
     </View>
