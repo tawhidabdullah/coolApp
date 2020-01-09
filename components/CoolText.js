@@ -44,11 +44,12 @@ const styles = StyleSheet.create({
   primaryHeading: {
     fontSize: 18,
     fontWeight: '700',
-    color: '#444'
+    lineHeight: 27
   },
   paragraphText: {
-    fontSize: 17,
+    fontSize: 16,
     fontWeight: '500',
-    color: '#666'
+    color: '#666',
+    lineHeight: 23
   }
 });

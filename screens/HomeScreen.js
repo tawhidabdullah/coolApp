@@ -31,18 +31,12 @@ export default function HomeScreen() {
       </ScrollView>
 
       <View style={styles.tabBarInfoContainer}>
-        <CoolText type="primary">
-          {' '}
-          Home Screen Home Screen Home Screen{' '}
-        </CoolText>
+        <CoolText type="primary"> Computer Number One </CoolText>
         <CoolText type="paragraph">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, unde
-          numquam eaque commodi libero vero quae ipsa eum similique, rerum harum
-          nisi officia accusantium impedit nesciunt laboriosam at praesentium
-          molestiae. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Sit, unde numquam eaque commodi libero vero quae ipsa eum similique,
-          rerum harum nisi officia accusantium impedit nesciunt laboriosam at
-          praesentium molestiae.
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. At suscipit,
+          tempore rerum mollitia doloremque aperiam, sed id et consequuntur
+          totam nulla cum. Natus modi aperiam accusamus nesciunt omnis libero
+          asperiores!
         </CoolText>
       </View>
     </View>
