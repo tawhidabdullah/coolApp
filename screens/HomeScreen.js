@@ -6,11 +6,10 @@ import {
   ScrollView,
   StyleSheet,
   Text,
-  TouchableOpacity,
   View
 } from 'react-native';
 
-import { NormalText, PrimaryHeading } from '../components/StyledText';
+import { CoolText } from '../components';
 
 export default function HomeScreen() {
   return (
@@ -32,8 +31,19 @@ export default function HomeScreen() {
       </ScrollView>
 
       <View style={styles.tabBarInfoContainer}>
-        <PrimaryHeading>Home Screen</PrimaryHeading>
-        <NormalText style={styles.codeHighlightText}>Woo App</NormalText>
+        <CoolText type="primary">
+          {' '}
+          Home Screen Home Screen Home Screen{' '}
+        </CoolText>
+        <CoolText type="paragraph">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, unde
+          numquam eaque commodi libero vero quae ipsa eum similique, rerum harum
+          nisi officia accusantium impedit nesciunt laboriosam at praesentium
+          molestiae. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Sit, unde numquam eaque commodi libero vero quae ipsa eum similique,
+          rerum harum nisi officia accusantium impedit nesciunt laboriosam at
+          praesentium molestiae.
+        </CoolText>
       </View>
     </View>
   );

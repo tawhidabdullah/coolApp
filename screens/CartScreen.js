@@ -1,11 +1,11 @@
 import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
-import { PrimaryHeading } from '../components/StyledText';
+import { CoolText } from '../components';
 
 export default function CartScreen() {
   return (
     <ScrollView style={styles.container}>
-      <PrimaryHeading>CartScreen </PrimaryHeading>
+      <CoolText type="primary">CartScreen </CoolText>
     </ScrollView>
   );
 }

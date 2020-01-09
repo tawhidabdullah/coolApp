@@ -1,11 +1,11 @@
 import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
-import { PrimaryHeading } from '../components/StyledText';
+import { CoolText } from '../components';
 
 export default function AccountScreen() {
   return (
     <ScrollView style={styles.container}>
-      <PrimaryHeading>Account Screen </PrimaryHeading>
+      <CoolText type="primary">Account Screen </CoolText>
     </ScrollView>
   );
 }
