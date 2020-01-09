@@ -5,17 +5,18 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import AccountScreen from '../screens/AccountScreen';
+import CartScreen from '../screens/CartScreen';
+import ProductListing from '../screens/ProductListing';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
-  default: {},
+  default: {}
 });
 
 const HomeStack = createStackNavigator(
   {
-    Home: HomeScreen,
+    Home: HomeScreen
   },
   config
 );
@@ -25,53 +26,75 @@ HomeStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={
-        Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
-      }
+      name={Platform.OS === 'ios' ? `ios-home` : 'md-home'}
     />
-  ),
+  )
 };
 
 HomeStack.path = '';
 
-const LinksStack = createStackNavigator(
+const ProductListingStack = createStackNavigator(
   {
-    Links: LinksScreen,
+    Home: ProductListing
   },
   config
 );
 
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
+ProductListingStack.navigationOptions = {
+  tabBarLabel: 'Products',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} />
-  ),
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? `ios-pricetags` : 'md-pricetags'}
+    />
+  )
 };
 
-LinksStack.path = '';
+ProductListingStack.path = '';
 
-const SettingsStack = createStackNavigator(
+const CartStack = createStackNavigator(
   {
-    Settings: SettingsScreen,
+    Home: CartScreen
   },
   config
 );
 
-SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
+CartStack.navigationOptions = {
+  tabBarLabel: 'Cart',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
-  ),
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? `ios-cart` : 'md-cart'}
+    />
+  )
 };
 
-SettingsStack.path = '';
+CartStack.path = '';
+
+const AccountStack = createStackNavigator(
+  {
+    Home: AccountScreen
+  },
+  config
+);
+
+AccountStack.navigationOptions = {
+  tabBarLabel: 'Account',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? `ios-person` : 'md-person'}
+    />
+  )
+};
+
+AccountStack.path = '';
 
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
-  LinksStack,
-  SettingsStack,
+  ProductListingStack,
+  CartStack,
+  AccountStack
 });
 
 tabNavigator.path = '';
