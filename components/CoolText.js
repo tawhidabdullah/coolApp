@@ -1,55 +1,31 @@
 import React from 'react';
 import { Text, StyleSheet } from 'react-native';
-import { setFontType } from '../utils/textManipulator';
 
-export default CoolText = props => {
-  const { type } = props;
-
-  switch (type) {
-    case 'primary':
-      return <PrimaryHeading {...props} />;
-    case 'paragraph':
-      return <ParagraphText {...props} />;
-    default:
-      return <NormalText />;
-  }
+const CoolText = ({ children, style, type = 'secondary' }) => {
+  return <Text style={[styles[type], styles.common, style]}>{children}</Text>;
 };
 
-function PrimaryHeading(props) {
-  const font = setFontType('raleMedium');
-  const style = [
-    { fontFamily: font },
-    styles.primaryHeading,
-    props.style || {}
-  ];
-  const allProps = Object.assign({}, props, { style: style });
-  return <Text {...allProps}>{props.children}</Text>;
-}
-
-function NormalText(props) {
-  const font = setFontType(props.type ? props.type : 'normal');
-  const style = [{ fontFamily: font }, props.style || {}];
-  const allProps = Object.assign({}, props, { style: style });
-  return <Text {...allProps}>{props.children}</Text>;
-}
-
-function ParagraphText(props) {
-  const font = setFontType('raleRegular');
-  const style = [{ fontFamily: font }, styles.paragraphText, props.style || {}];
-  const allProps = Object.assign({}, props, { style: style });
-  return <Text {...allProps}>{props.children}</Text>;
-}
-
 const styles = StyleSheet.create({
-  primaryHeading: {
-    fontSize: 18,
-    fontWeight: '700',
-    lineHeight: 27
-  },
-  paragraphText: {
+  primary: {
     fontSize: 16,
     fontWeight: '500',
     color: '#666',
     lineHeight: 23
+  },
+  secondary: {
+    fontSize: 20,
+    fontWeight: '500',
+    color: '#444',
+    lineHeight: 27
+  },
+  header: {
+    fontSize: 24,
+    fontWeight: '500',
+    lineHeight: 28
+  },
+  common: {
+    fontFamily: 'raleRegular'
   }
 });
+
+export default CoolText;
